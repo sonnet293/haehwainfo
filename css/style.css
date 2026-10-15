@@ -368,6 +368,249 @@ ol {
   margin: 0 !important;
 }
 
+/* ===== 학교소개 (인사말 · 학교 상징) ===== */
+.intro {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.intro-title {
+  font-size: clamp(28px, 6vw, 48px);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+}
+
+.intro-title span,
+.intro h4 span {
+  color: var(--point);
+}
+
+.intro-lead {
+  margin-top: clamp(16px, 3vw, 24px);
+  font-size: clamp(15px, 2vw, 18px);
+}
+
+.divider {
+  margin: clamp(28px, 5vw, 40px) 0;
+  border: none;
+  border-top: 1px solid var(--line);
+}
+
+.signature {
+  margin-top: 28px !important;
+  text-align: right;
+  color: var(--text-sub);
+}
+
+.signature b {
+  margin-left: 6px;
+  font-size: 1.2em;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+/* 학교 상징 제목: 밑줄 없음 */
+.doc .symbol-title {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border: none;
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.doc .symbol-title::after {
+  display: none;
+}
+
+.symbol-block {
+  margin-top: clamp(40px, 7vw, 72px);
+}
+
+#motto {
+  margin-top: clamp(24px, 4vw, 36px);
+}
+
+/* 항목 이름: 글씨 위에만 2px 선 */
+.doc .symbol-label {
+  display: inline-block;
+  padding-top: 8px;
+  margin-bottom: clamp(20px, 3vw, 28px);
+  border-top: 2px solid var(--point);
+  font-size: clamp(16px, 2vw, 18px);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+/* 교훈 */
+.motto {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(8px, 2vw, 16px);
+  text-align: center;
+}
+
+.motto li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(18px, 4vw, 28px) 4px;
+  background: var(--point-soft);
+  border-radius: 12px;
+}
+
+.motto strong {
+  font-size: clamp(20px, 4vw, 30px);
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--point);
+}
+
+.motto span {
+  margin-top: 4px;
+  font-size: clamp(12px, 1.6vw, 15px);
+  color: #999;
+  letter-spacing: 0.15em;
+}
+
+/* 이미지 + 글 */
+.media-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 40px);
+  align-items: center;
+}
+
+.media-row + .media-row {
+  margin-top: clamp(32px, 5vw, 48px);
+}
+
+.media-row.reverse .media-img {
+  order: 2;
+}
+
+.media-row.align-right .media-text {
+  text-align: right;
+}
+
+.media-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.media-img.crop img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.emblem-img {
+  width: 100%;
+  max-width: 320px;
+  justify-self: center;
+}
+
+.intro h4 {
+  margin-bottom: 12px;
+  font-size: clamp(19px, 2.6vw, 24px);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.plant-info div {
+  display: flex;
+  gap: 8px;
+}
+
+.plant-info div + div {
+  margin-top: 6px;
+}
+
+.plant-info dt {
+  flex: none;
+  font-weight: 700;
+}
+
+.plant-info dt::after {
+  content: ':';
+}
+
+.align-right .plant-info div {
+  justify-content: flex-end;
+}
+
+/* 교복: 잘리지 않게 전체 표시 */
+.uniform-img a {
+  display: block;
+}
+
+.uniform-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.uniform-img figcaption {
+  display: none;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #999;
+  text-align: center;
+}
+
+/* 태블릿 */
+@media (max-width: 1024px) {
+  .emblem-img {
+    max-width: 260px;
+  }
+}
+
+/* 모바일: 이미지 위, 글 아래로 쌓기 */
+@media (max-width: 600px) {
+  .media-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .media-row.reverse .media-img {
+    order: 0;
+  }
+
+  .media-row.align-right .media-text {
+    text-align: left;
+  }
+
+  .align-right .plant-info div {
+    justify-content: flex-start;
+  }
+
+  .media-img.crop img {
+    aspect-ratio: 3 / 2;
+  }
+
+  .emblem-img {
+    max-width: 200px;
+  }
+
+  .uniform-img figcaption {
+    display: block;
+  }
+}
+
+/* 작은 휴대폰 */
+@media (max-width: 380px) {
+  .signature b {
+    display: block;
+    margin-left: 0;
+  }
+}
+
+.intro-title {
+  animation: fadeUp 0.9s var(--ease-out) 0.2s both;
+}
+
 /* ===== 반응형 ===== */
 
 /* 태블릿 */

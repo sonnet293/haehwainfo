@@ -23,7 +23,7 @@ if (menuBtn && gnb) {
 document.documentElement.classList.add('js');
 
 const revealTargets = document.querySelectorAll(
-  '.doc section > h2, .doc section > h3, .doc section > p, .timeline li, .floors li'
+  '.doc section > h2, .doc section > h3, .doc section > p, .timeline li, .floors li, .symbol-label, .motto li, .media-row, .uniform-img'
 );
 
 revealTargets.forEach((el) => el.classList.add('reveal'));
